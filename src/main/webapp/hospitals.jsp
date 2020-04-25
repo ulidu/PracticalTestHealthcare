@@ -68,7 +68,7 @@
 
                                                             <br>
 
-                                                            <form id="formItem" name="formItem" class="form-horizontal"
+                                                            <form id="formHospital" name="formHospital" class="form-horizontal"
                                                                   role="form" autocomplete="off">
                                                                 <div class="form-group row">
                                                                     <label class="col-md-3 control-label">Hospital
