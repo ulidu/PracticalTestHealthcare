@@ -180,29 +180,11 @@
 
                                                 </div>
 
-                                                <div class="pull-right">
-                                                    <div class="col-xs-12">
-                                                        <input type="text" id="search-table"
-                                                               class="form-control pull-right" placeholder="Search">
-                                                    </div>
-                                                </div>
+
                                                 <div class="clearfix"></div>
                                             </div>
                                             <div class="card-body">
-                                               <!-- <table class="table table-hover demo-table-search table-responsive-block"
-                                                       id="divItemsGrid">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Hospital ID</th>
-                                                        <th>Hospital Name</th>
-                                                        <th>Hospital Address</th>
-                                                        <th>Hospital Phone</th>
-                                                        <th>Hospital Username</th>
-                                                        <th>Hospital Password</th>
-                                                        <th style="text-align: center">Update</th>
-                                                        <th style="text-align: center">Remove</th>
-                                                    </tr>
-                                                    </thead> -->
+
 
                                                 <div id="divHospitalsGrid">
                                                     <%

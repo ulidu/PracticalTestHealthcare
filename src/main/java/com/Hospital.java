@@ -38,7 +38,7 @@ public class Hospital {
             }
 
             // Prepare the html table to be displayed
-            output = "<table border='1'><tr><th>hospitalID</th> <th>hospitalName</th ><th >hospitalAddress</th > " + "<th>hospitalPhone</th> <th>hospitalUsername</th ><th >hospitalPassword</th ><th>appointmentCharge</th ><th >Update</th ><th >Remove</th ></tr > ";
+            output = "<table border=1 padding=10><tr style=\"text-align:center;\"><th>hospital ID</th> <th>Hospital Name</th ><th >Address</th > " + "<th>Phone Number</th><th>Username of the Hospital</th><th>Password of the Hospital</th><th>Charges for an Appointment</th><th>Update</th ><th>Remove</th></tr> ";
 
             String query = "select * from hospital";
             Statement stmt = con.createStatement();
