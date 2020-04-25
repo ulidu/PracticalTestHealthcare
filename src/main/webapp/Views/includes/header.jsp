@@ -81,7 +81,7 @@
     <!-- START PAGE-CONTAINER -->
     <div class="page-container ">
         <!-- START HEADER -->
-        <div class="header ">
+        <div style="background-color: transparent" class="header ">
             <!-- START MOBILE SIDEBAR TOGGLE -->
             <a href="#" class="btn-link toggle-sidebar d-lg-none pg pg-menu" data-toggle="sidebar">
             </a>
@@ -93,10 +93,13 @@
 
 
             </div>
+            <div style="width: 50%; margin-top: -10px; text-align: center" id="alertSuccess" class="alert alert-success v-align-middle"></div>
+            <div style="width: 50%; margin-top: -10px; text-align: center" id="alertError" class="alert alert-danger v-align-middle"></div>
             <div class="d-flex align-items-center">
 
                 <!-- START User Info-->
                 <div class="pull-left p-r-10 fs-14 font-heading d-lg-inline-block d-none m-l-20">
+
 
                 </div>
                 <div class="dropdown pull-right d-lg-inline-block d-none">

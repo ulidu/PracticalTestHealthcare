@@ -1,5 +1,5 @@
 <jsp:include page="Views/includes/header.jsp"/>
-
+<script src="Components/hospitals.js"></script>
 <!-- START PAGE CONTENT WRAPPER -->
 <div class="page-content-wrapper ">
     <!-- START PAGE CONTENT -->

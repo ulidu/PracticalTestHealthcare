@@ -138,16 +138,8 @@
                                                                                name="hospitalPassword" required>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 control-label">Confirm
-                                                                        Password</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="password" class="form-control"
-                                                                               id="passwordConfirm"
-                                                                               placeholder="Re-type your password"
-                                                                               name="passwordConfirm" required>
-                                                                    </div>
-                                                                </div>
+
+
 
                                                                 <br>
                                                                 <div class="row">
@@ -160,22 +152,20 @@
                                                                             Submit
                                                                         </button>
 
-                                                                        <input type="hidden" id="hidHospitalIDSave"
-                                                                               name="hidHospitalIDSave" value="">
 
                                                                         <a href="hospitals.jsp" class="btn btn-danger"
                                                                            onclick="" type="button">Cancel</a>
 
                                                                     </div>
                                                                 </div>
+                                                                <input type="hidden" id="hidHospitalIDSave" name="hidHospitalIDSave" value="">
                                                             </form>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div id="alertSuccess" class="alert alert-success"></div>
-                                            <div id="alertError" class="alert alert-danger"></div>
+
                                             <!-- END card -->
                                             <!-- START card -->
 
@@ -199,8 +189,8 @@
                                                 <div class="clearfix"></div>
                                             </div>
                                             <div class="card-body">
-                                                <table class="table table-hover demo-table-search table-responsive-block"
-                                                       id="tableWithSearch">
+                                               <!-- <table class="table table-hover demo-table-search table-responsive-block"
+                                                       id="divItemsGrid">
                                                     <thead>
                                                     <tr>
                                                         <th>Hospital ID</th>
@@ -212,12 +202,16 @@
                                                         <th style="text-align: center">Update</th>
                                                         <th style="text-align: center">Remove</th>
                                                     </tr>
-                                                    </thead>
+                                                    </thead> -->
+
+                                                <div id="divHospitalsGrid">
                                                     <%
                                                         Hospital hospitalObj = new Hospital();
                                                         out.print(hospitalObj.readHospitals());
                                                     %>
-                                                </table>
+
+                                                </div>
+                                              <!--  </table> -->
                                             </div>
                                         </div>
                                         <!-- END card -->

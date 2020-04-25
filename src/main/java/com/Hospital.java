@@ -10,7 +10,7 @@ public class Hospital {
 
         try {
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/practicaltest", "root", "");
 
         } catch (Exception e) {
@@ -38,7 +38,7 @@ public class Hospital {
             }
 
             // Prepare the html table to be displayed
-            output = "<tbody>";
+            output = "<table border='1'><tr><th>hospitalID</th> <th>hospitalName</th ><th >hospitalAddress</th > " + "<th>hospitalPhone</th> <th>hospitalUsername</th ><th >hospitalPassword</th ><th>appointmentCharge</th ><th >Update</th ><th >Remove</th ></tr > ";
 
             String query = "select * from hospital";
             Statement stmt = con.createStatement();
@@ -57,22 +57,22 @@ public class Hospital {
 
                 // Add into the html table
                 output += "<tr><td><input id='hidHospitalIDSave' name = 'hidHospitalIDSave' type = 'hidden' value = '" + hospitalID + "'>" + hospitalID + "</td>";
-                output += "<td class=\"v-align-middle\">" + hospitalName + "</td>";
-                output += "<td class=\"v-align-middle\">" + hospitalAddress + "</td>";
-                output += "<td class=\"v-align-middle\">" + hospitalPhone + "</td>";
-                output += "<td class=\"v-align-middle\">" + hospitalUsername + "</td>";
-                output += "<td class=\"v-align-middle\">" + hospitalPassword + "</td>";
-                output += "<td class=\"v-align-middle\">" + appointmentCharge + "</td>";
+                output += "<td>" + hospitalName + "</td>";
+                output += "<td>" + hospitalAddress + "</td>";
+                output += "<td>" + hospitalPhone + "</td>";
+                output += "<td>" + hospitalUsername + "</td>";
+                output += "<td>" + hospitalPassword + "</td>";
+                output += "<td>" + appointmentCharge + "</td>";
 
                 // buttons
-                output += "<td class=\"v-align-middle\"><input name='btnUpdate' type = 'button' value = '<i class=\"fa fa-edit\"></i> Update' class=\"btn btn-info\" ></td> " + "<td class=\"v-align-middle\"><input name='btnRemove' type = 'button' value = '<i class=\"fa fa-trash-o\"></i> Remove' class=\"btn btn-danger\" data-hospitalID = '" + hospitalID + "'>" + "</td></tr>";
+                output += "<td><input name='btnUpdate' type = 'button' value = 'Update' class='btnUpdate btn btn-secondary' ></td > " + "<td><input name='btnRemove' type = 'button' value = 'Remove' class='btnRemove btn btn-danger' data-hospitalid = '" + hospitalID + "'>" + "</td></tr>";
 
             }
 
             con.close();
 
             // Complete the html table
-            output += " </tbody>";
+            output += "</table>";
 
         } catch (Exception e) {
 
@@ -132,7 +132,7 @@ public class Hospital {
 
     }
 
-    public String updateHospital(String hospitalID, String hospitalName, String hospitalAddress, String hospitalPhone, String hospitalUsername, String hospitalPassword, String appointmentCharge) {
+    public String updateHospital(String ID, String hospitalName, String hospitalAddress, String hospitalPhone, String hospitalUsername, String hospitalPassword, String appointmentCharge) {
 
         String output = "";
 
@@ -158,7 +158,7 @@ public class Hospital {
             preparedStmt.setString(4, hospitalUsername);
             preparedStmt.setString(5, hospitalPassword);
             preparedStmt.setDouble(6, Double.parseDouble(appointmentCharge));
-            preparedStmt.setInt(7, Integer.parseInt(hospitalID));
+            preparedStmt.setInt(7, Integer.parseInt(ID));
 
             // execute the statement
             preparedStmt.execute();

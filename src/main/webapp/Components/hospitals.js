@@ -49,7 +49,7 @@ function onHospitalSaveComplete(response, status) {
 
             $("#alertSuccess").text("Successfully saved.");
             $("#alertSuccess").show();
-            $("#divItemsGrid").html(resultSet.data);
+            $("#divHospitalsGrid").html(resultSet.data);
 
         } else if (resultSet.status.trim() == "error") {
 
@@ -78,10 +78,10 @@ function onHospitalSaveComplete(response, status) {
 $(document).on("click", ".btnUpdate", function(event)
 {
     $("#hidHospitalIDSave").val($(this).closest("tr").find('#hidHospitalIDSave').val());
-    $("#hospitalName").val($(this).closest("tr").find('td:eq(0)').text());
-    $("#hospitalAddress").val($(this).closest("tr").find('td:eq(1)').text());
-    $("#hospitalPhone").val($(this).closest("tr").find('td:eq(2)').text());
-    $("#appointmentCharge").val($(this).closest("tr").find('td:eq(3)').text());
+    $("#hospitalName").val($(this).closest("tr").find('td:eq(1)').text());
+    $("#hospitalAddress").val($(this).closest("tr").find('td:eq(2)').text());
+    $("#hospitalPhone").val($(this).closest("tr").find('td:eq(3)').text());
+    $("#appointmentCharge").val($(this).closest("tr").find('td:eq(6)').text());
     $("#hospitalUsername").val($(this).closest("tr").find('td:eq(4)').text());
     $("#hospitalPassword").val($(this).closest("tr").find('td:eq(5)').text());
 });
@@ -93,7 +93,7 @@ $(document).on("click", ".btnRemove", function(event)
         {
             url : "HospitalsAPI",
             type : "DELETE",
-            data : "hospitalID=" + $(this).data("hospitalID"),
+            data : "hospitalID=" + $(this).data("hospitalid"),
             dataType : "text",
             complete : function(response, status)
             {
@@ -112,7 +112,7 @@ function onHospitalDeleteComplete(response, status) {
 
             $("#alertSuccess").text("Successfully deleted.");
             $("#alertSuccess").show();
-            $("#divItemsGrid").html(resultSet.data);
+            $("#divHospitalsGrid").html(resultSet.data);
 
         } else if (resultSet.status.trim() == "error") {
 
