@@ -4,6 +4,7 @@
 <jsp:include page="Views/includes/header.jsp"/>
 
 <script src="Components/hospitals.js"></script>
+<script src="Components/jquery-3.5.0.min.js"></script>
 
 <!-- START PAGE CONTENT WRAPPER -->
 <div class="page-content-wrapper ">

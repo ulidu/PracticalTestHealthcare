@@ -33,6 +33,8 @@
     </style>
 
 
+
+    <script src="Components/hospitals.js"></script>
     <script src="Components/jquery-3.5.0.min.js"></script>
 
 
@@ -63,12 +65,6 @@
                     <a href="hospitals.jsp"><span class="title">Hospitals</span></a>
                     <span class="icon-thumbnail"><i data-feather="shield"></i></span>
                 </li>
-               
-                <li class="">
-                    <a href="payments.jsp"><span class="title">Payments</span></a>
-                    <span class="icon-thumbnail"><i data-feather="credit-card"></i></span>
-                </li>
-
 
             </ul>
 
@@ -95,6 +91,7 @@
             </div>
             <div style="width: 50%; margin-top: -10px; text-align: center" id="alertSuccess" class="alert alert-success v-align-middle"></div>
             <div style="width: 50%; margin-top: -10px; text-align: center" id="alertError" class="alert alert-danger v-align-middle"></div>
+
             <div class="d-flex align-items-center">
 
                 <!-- START User Info-->

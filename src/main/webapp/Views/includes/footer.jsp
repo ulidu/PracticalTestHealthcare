@@ -68,7 +68,9 @@
 <!-- END VENDOR JS -->
 <!-- BEGIN CORE TEMPLATE JS -->
 
-<script src="jquery-3.5.0.min.js"></script>
+<script src="Components/hospitals.js"></script>
+<script src="Components/jquery-3.5.0.min.js"></script>
+
 <script>
 
     $("#buttonscroll").click(function() {
