@@ -56,7 +56,7 @@ public class Hospital {
                 String appointmentCharge = Double.toString(rs.getDouble("appointmentCharge"));
 
                 // Add into the html table
-                output += "<tr><td><input id='hidHospitalIDSave' name = 'hidHospitalIDSave' type = 'hidden' value = '" + hospitalID + "'>" + hospitalID + "</td>";
+                output += "<tr><td><input id='hidHospitalIDSave' name='hidHospitalIDSave' type='hidden' value = '" + hospitalID + "'>" + hospitalID + "</td>";
                 output += "<td>" + hospitalName + "</td>";
                 output += "<td>" + hospitalAddress + "</td>";
                 output += "<td>" + hospitalPhone + "</td>";
