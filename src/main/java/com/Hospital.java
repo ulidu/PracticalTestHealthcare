@@ -10,7 +10,7 @@ public class Hospital {
 
         try {
 
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3308/practicaltest", "root", "");
 
         } catch (Exception e) {
@@ -38,7 +38,7 @@ public class Hospital {
             }
 
             // Prepare the html table to be displayed
-            output = "<table border=1 padding=10><tr style=\"text-align:center;\"><th>hospital ID</th> <th>Hospital Name</th ><th >Address</th > " + "<th>Phone Number</th><th>Username of the Hospital</th><th>Password of the Hospital</th><th>Charges for an Appointment</th><th>Update</th ><th>Remove</th></tr> ";
+            output = "<table style='text-align:center' id=divHospitalsGrid_dt class='table table-striped table-bordered table-sm'><thead><tr><th class=th-sm> Hospital ID </th> <th class=th-sm> Name </th ><th class=th-sm> Address </th> <th class=th-sm> Phone Number </th> <th class=th-sm> Username </th><th class=th-sm> Password </th><th class=th-sm> Appointment Charge </th> <th class=th-sm> Update </th ><th class=th-sm> Remove </th ></tr></thead> ";
 
             String query = "select * from hospital";
             Statement stmt = con.createStatement();
@@ -56,7 +56,7 @@ public class Hospital {
                 String appointmentCharge = Double.toString(rs.getDouble("appointmentCharge"));
 
                 // Add into the html table
-                output += "<tr><td><input id='hidHospitalIDSave' name='hidHospitalIDSave' type='hidden' value = '" + hospitalID + "'>" + hospitalID + "</td>";
+                output += "<tbody><tr><td><input id='hidHospitalIDUpdate' name = 'hidHospitalIDUpdate' type = 'hidden' value = '" + hospitalID + "'>" + hospitalID + "</td>";
                 output += "<td>" + hospitalName + "</td>";
                 output += "<td>" + hospitalAddress + "</td>";
                 output += "<td>" + hospitalPhone + "</td>";
@@ -65,7 +65,7 @@ public class Hospital {
                 output += "<td>" + appointmentCharge + "</td>";
 
                 // buttons
-                output += "<td><input name='btnUpdate' type = 'button' value = 'Update' class='btnUpdate btn btn-secondary' ></td > " + "<td><input name='btnRemove' type = 'button' value = 'Remove' class='btnRemove btn btn-danger' data-hospitalid = '" + hospitalID + "'>" + "</td></tr>";
+                output += "<td><input name='btnUpdate' type = 'button' value = 'Update' class='btnUpdate btn btn-primary' ></td > " + "<td><input name='btnRemove' type = 'button' value = 'Remove' class='btnRemove btn btn-danger' data-hospitalid = '" + hospitalID + "'>" + "</td></tr></tbody>";
 
             }
 
@@ -100,7 +100,7 @@ public class Hospital {
             }
 
             // create a prepared statement
-            String query = "insert into hospital(hospitalID, hospitalName, hospitalAddress, hospitalPhone, hospitalUsername, hospitalPassword, appointmentCharge)" + " values (?, ?, ?, ?, ?, ?, ?)";
+            String query = " insert into hospital (hospitalID, hospitalName, hospitalAddress, hospitalPhone, hospitalUsername, hospitalPassword, appointmentCharge)" + " values (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             // binding values
@@ -112,13 +112,11 @@ public class Hospital {
             preparedStmt.setString(6, hospitalPassword);
             preparedStmt.setDouble(7, Double.parseDouble(appointmentCharge));
 
-
             // execute the statement
             preparedStmt.execute();
             con.close();
 
             String newHospitals = readHospitals();
-
             output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
 
         } catch (Exception e) {
@@ -147,8 +145,7 @@ public class Hospital {
             }
 
             // create a prepared statement
-            String query = "UPDATE hospital SET hospitalName = ?, hospitalAddress = ?, hospitalPhone = ?, hospitalUsername = ?, hospitalPassword = ?, appointmentCharge = ? WHERE hospitalID = ?";
-
+            String query = "UPDATE hospital SET hospitalName =?,hospitalAddress =?,hospitalPhone =?,hospitalUsername =?,hospitalPassword =?,appointmentCharge =?WHERE hospitalID =?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             // binding values
@@ -193,7 +190,7 @@ public class Hospital {
             }
 
             // create a prepared statement
-            String query = "delete from hospital where hospitalID = ?";
+            String query = "delete from hospital where hospitalID=?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             // binding values

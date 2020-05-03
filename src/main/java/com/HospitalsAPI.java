@@ -46,7 +46,6 @@ public class HospitalsAPI extends HttpServlet {
         Map<String, String> map = new HashMap<String, String>();
 
         try {
-
             Scanner scanner = new Scanner(request.getInputStream(), "UTF-8");
             String queryString = scanner.hasNext() ? scanner.useDelimiter("\\A").next() : "";
             scanner.close();
