@@ -90,12 +90,12 @@
     <!-- Sidebar -->
     <div class="sidebar-fixed position-fixed">
 
-        <a class="logo-wrapper waves-effect">
+        <a href="hospitals.jsp" class="logo-wrapper waves-effect">
             <img src="Views/img/logo_2x.png" class="img-fluid" alt="">
         </a>
 
         <div class="list-group list-group-flush">
-            <a style="color: white" class="list-group-item active waves-effect">
+            <a href="hospitals.jsp" style="color: white" class="list-group-item active waves-effect">
                 <i class="fas fa-hospital-symbol mr-3"></i>Hospitals
             </a>
         </div>
