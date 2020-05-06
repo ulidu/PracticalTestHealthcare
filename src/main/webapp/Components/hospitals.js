@@ -66,7 +66,7 @@ function onHospitalSaveComplete(response, status) {
 
     } else {
 
-        $("#alertError").text("Unknown Error Occurred while Saving.");
+        $("#alertError").text("Unknown error occurred while Saving.");
         $("#alertError").show();
 
     }
