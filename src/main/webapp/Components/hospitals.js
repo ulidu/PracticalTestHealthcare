@@ -134,7 +134,7 @@ function onHospitalDeleteComplete(response, status) {
 
 }
 
-// Client Model
+// Validation
 function validateHospitalForm() {
 
     // hospitalName
